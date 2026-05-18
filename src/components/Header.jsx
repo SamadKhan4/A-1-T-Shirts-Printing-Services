@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import logo from "../assets/fav.png";
 import { navItems } from "../data/siteData";
+import { smoothScrollTo } from "../utils/smoothScroll";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,7 +20,7 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 h-16 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-3">
+        <a href="#top" className="flex items-center gap-3" onClick={(event) => smoothScrollTo(event, "#top")}>
           <img src={logo} alt="A-1 Prints" className="w-10 h-10 object-cover rounded-full" />
           <span className="font-outfit font-semibold text-l tracking-widest uppercase text-white/90">
             A-1 <br />Prints
@@ -28,13 +29,22 @@ export default function Header() {
 
         <nav className="hidden md:flex items-center gap-10">
           {navItems.map((item) => (
-            <a key={item} href={`#${item.toLowerCase()}`} className="nav-link-item">
+            <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              className="nav-link-item"
+              onClick={(event) => smoothScrollTo(event, `#${item.toLowerCase()}`)}
+            >
               {item}
             </a>
           ))}
         </nav>
 
-        <a href="#quote" className="hidden md:inline-block btn-primary">
+        <a
+          href="#quote"
+          className="hidden md:inline-block btn-primary"
+          onClick={(event) => smoothScrollTo(event, "#quote")}
+        >
           Get a Quote
         </a>
 
@@ -59,12 +69,16 @@ export default function Header() {
               key={item}
               href={`#${item.toLowerCase()}`}
               className="nav-link-item text-base"
-              onClick={() => setMenuOpen(false)}
+              onClick={(event) => smoothScrollTo(event, `#${item.toLowerCase()}`, () => setMenuOpen(false))}
             >
               {item}
             </a>
           ))}
-          <a href="#quote" className="btn-primary text-center mt-2" onClick={() => setMenuOpen(false)}>
+          <a
+            href="#quote"
+            className="btn-primary text-center mt-2"
+            onClick={(event) => smoothScrollTo(event, "#quote", () => setMenuOpen(false))}
+          >
             Get a Quote
           </a>
         </div>

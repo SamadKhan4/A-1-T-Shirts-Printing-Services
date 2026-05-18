@@ -1,5 +1,6 @@
 import logo from "../assets/a-1.png";
 import { specialties } from "../data/siteData";
+import { smoothScrollTo } from "../utils/smoothScroll";
 
 export default function HeroSection() {
   return (
@@ -36,10 +37,10 @@ export default function HeroSection() {
               polos, uniforms and merchandise with clean print quality and dependable delivery.
             </p>
             <div className="flex flex-wrap gap-4 fade-up delay-3">
-              <a href="#quote" className="btn-primary">
+              <a href="#quote" className="btn-primary" onClick={(event) => smoothScrollTo(event, "#quote")}>
                 Start Your Order
               </a>
-              <a href="#products" className="btn-outline">
+              <a href="#products" className="btn-outline" onClick={(event) => smoothScrollTo(event, "#products")}>
                 View Products
               </a>
             </div>

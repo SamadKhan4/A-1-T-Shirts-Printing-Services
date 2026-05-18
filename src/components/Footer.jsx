@@ -1,5 +1,6 @@
 import logo from "../assets/a-1.png";
 import { navItems } from "../data/siteData";
+import { smoothScrollTo } from "../utils/smoothScroll";
 
 export default function Footer() {
   return (
@@ -20,7 +21,12 @@ export default function Footer() {
 
           <nav className="flex flex-wrap gap-x-12 gap-y-4">
             {navItems.map((item) => (
-              <a key={item} href={`#${item.toLowerCase()}`} className="nav-link-item">
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                className="nav-link-item"
+                onClick={(event) => smoothScrollTo(event, `#${item.toLowerCase()}`)}
+              >
                 {item}
               </a>
             ))}
