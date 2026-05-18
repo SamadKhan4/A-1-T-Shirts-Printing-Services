@@ -1,1 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap");
 @import "tailwindcss";
+
+@theme {
+  --font-outfit: "Outfit", sans-serif;
+  --font-garamond: "EB Garamond", serif;
+  --color-lavender: #c4b5fd;
+  --animate-marquee: marquee 22s linear infinite;
+  --animate-fade-up: fadeUp 0.8s ease forwards;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  input,
+  textarea {
+    @apply w-full resize-none border border-white/12 bg-[#111] px-[18px] py-3.5 font-outfit text-sm text-white outline-none transition-colors placeholder:text-white/30 focus:border-lavender;
+  }
+
+  label {
+    @apply mb-2 block font-outfit text-[11px] uppercase tracking-[0.12em] text-white/50;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0a0a0a;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #c4b5fd;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-block cursor-pointer border-0 bg-lavender px-9 py-3.5 font-outfit text-[13px] font-semibold uppercase tracking-[0.12em] text-[#0a0a0a] no-underline transition hover:-translate-y-0.5 hover:bg-white;
+  }
+
+  .btn-outline {
+    @apply inline-block cursor-pointer border border-white/35 bg-transparent px-9 py-[13px] font-outfit text-[13px] font-medium uppercase tracking-[0.12em] text-white no-underline transition hover:-translate-y-0.5 hover:border-lavender hover:text-lavender;
+  }
+
+  .nav-link-item {
+    @apply relative font-outfit text-xs uppercase tracking-[0.14em] text-white/75 no-underline transition-colors after:absolute after:-bottom-[3px] after:left-0 after:h-px after:w-0 after:bg-lavender after:transition-all after:content-[''] hover:text-white hover:after:w-full;
+  }
+
+  .category-card-inner {
+    @apply h-full border border-white/8 bg-[#0d0d0d] px-9 py-10 transition-colors hover:border-lavender/35 hover:bg-[#111];
+  }
+
+  .process-step-inner {
+    @apply border-t border-white/10 py-8 transition-colors hover:border-lavender;
+  }
+}
+
+@layer utilities {
+  .marquee-track {
+    @apply animate-marquee hover:[animation-play-state:paused];
+  }
+
+  .fade-up {
+    @apply animate-fade-up;
+  }
+
+  .delay-1 {
+    animation-delay: 0.15s;
+    opacity: 0;
+  }
+
+  .delay-2 {
+    animation-delay: 0.3s;
+    opacity: 0;
+  }
+
+  .delay-3 {
+    animation-delay: 0.45s;
+    opacity: 0;
+  }
+
+  .delay-4 {
+    animation-delay: 0.6s;
+    opacity: 0;
+  }
+
+  .hover-lift {
+    @apply transition hover:-translate-y-1.5 hover:shadow-[0_20px_60px_rgba(180,160,220,0.12)];
+  }
+
+  .lavender-line {
+    @apply after:mt-3.5 after:block after:h-[1.5px] after:w-10 after:bg-lavender after:content-[''];
+  }
+}
