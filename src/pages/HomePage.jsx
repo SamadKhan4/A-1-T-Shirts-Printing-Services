@@ -6,13 +6,11 @@ import ProcessSection from "../components/ProcessSection";
 import ProductsSection from "../components/ProductsSection";
 import QuoteSection from "../components/QuoteSection";
 import ServicesSection from "../components/ServicesSection";
-import SmoothScroll from "../components/SmoothScroll";
 import StatsSection from "../components/StatsSection";
 
 export default function HomePage() {
   return (
     <div className="bg-black text-white font-['EB_Garamond',serif] overflow-x-hidden">
-      <SmoothScroll />
       <Header />
       <HeroSection />
       <Marquee />
