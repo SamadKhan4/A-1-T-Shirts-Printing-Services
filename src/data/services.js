@@ -1,9 +1,15 @@
+import dtfPrinting from "../assets/product/dtf.png";
+import embroideryPrint from "../assets/product/emrodiprint.png";
+import screenPrinting from "../assets/product/screenprinting.png";
+import sublimationPrint from "../assets/product/sublimation.png";
+import vinylTransfer from "../assets/product/vinyle.png";
+
 export const services = [
   {
     slug: "screen-printing",
     name: "Screen Printing",
     desc: "High-volume, crisp results",
-    image: "https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=1200&q=80",
+    image: screenPrinting,
     intro:
       "Best for bulk T-shirt and uniform orders where solid colors, durability and consistent repeat prints matter.",
     bestFor: ["Bulk tees", "Event merchandise", "Uniform branding", "Simple bold artwork"],
@@ -15,7 +21,7 @@ export const services = [
     slug: "dtf-printing",
     name: "DTF Printing",
     desc: "Full-color, no minimums",
-    image: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1200&q=80",
+    image: dtfPrinting,
     intro:
       "A flexible full-color option for detailed graphics, gradients, small batches and quick custom requirements.",
     bestFor: ["Full-color logos", "Small batches", "Detailed artwork", "Fast sampling"],
@@ -27,7 +33,7 @@ export const services = [
     slug: "embroidery",
     name: "Embroidery",
     desc: "Premium textured finish",
-    image: "https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&fit=crop&w=1200&q=80",
+    image: embroideryPrint,
     intro:
       "Premium thread branding for polos, jackets, caps, uniforms and apparel that needs a sharp professional finish.",
     bestFor: ["Corporate polos", "Jackets", "Caps", "Premium uniforms"],
@@ -39,7 +45,7 @@ export const services = [
     slug: "sublimation",
     name: "Sublimation",
     desc: "All-over vivid prints",
-    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80",
+    image: sublimationPrint,
     intro:
       "Vivid print method for polyester garments, sports jerseys, all-over patterns and custom graphic apparel.",
     bestFor: ["Sports jerseys", "All-over prints", "Polyester tees", "Bright graphics"],
@@ -51,7 +57,7 @@ export const services = [
     slug: "vinyl-transfer",
     name: "Vinyl Transfer",
     desc: "Clean cut & weed work",
-    image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1200&q=80",
+    image: vinylTransfer,
     intro:
       "Clean heat-transfer option for names, numbers, simple graphics and short-run customization.",
     bestFor: ["Names and numbers", "Team jerseys", "Short runs", "Single-color marks"],

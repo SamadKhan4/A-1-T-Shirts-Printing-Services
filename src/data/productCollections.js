@@ -1,3 +1,13 @@
+import idCard from "../assets/product/idcard.png";
+import keychain from "../assets/product/keychain.jpg";
+import toteBag from "../assets/product/tote bag.jpg";
+import welcomeKit from "../assets/product/welcom-kit.png";
+import magicMug from "../assets/Other/magic_mug.png";
+import matteMug from "../assets/Other/matmug.png";
+import photoMug from "../assets/Other/photomug.png";
+import travelMug from "../assets/Other/travel-mug.png";
+import whiteCeramicMug from "../assets/Other/White-Ceramic-Mug.png";
+
 export const productDropdownItems = [
   {
     label: "All Products",
@@ -7,12 +17,12 @@ export const productDropdownItems = [
   {
     label: "Goodies",
     href: "/products/goodies",
-    image: "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=900&q=80",
+    image: welcomeKit,
   },
   {
     label: "Mugs",
     href: "/products/mugs",
-    image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80",
+    image: whiteCeramicMug,
   },
   {
     label: "Jackets",
@@ -35,7 +45,7 @@ export const productCollections = {
     items: [
       {
         name: "Welcome Kit",
-        image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80",
+        image: welcomeKit,
       },
       {
         name: "Branded Notebook",
@@ -47,15 +57,15 @@ export const productCollections = {
       },
       {
         name: "Keychain",
-        image: "https://images.unsplash.com/photo-1603974372039-adc49044b6bd?auto=format&fit=crop&w=900&q=80",
+        image: keychain,
       },
       {
         name: "Tote Bag",
-        image: "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=900&q=80",
+        image: toteBag,
       },
       {
         name: "ID Card Lanyard",
-        image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=900&q=80",
+        image: idCard,
       },
     ],
     uses: ["Employee onboarding", "Event giveaways", "Client gifting", "Retail promotions"],
@@ -68,11 +78,11 @@ export const productCollections = {
     items: [
       {
         name: "White Ceramic Mug",
-        image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80",
+        image: whiteCeramicMug,
       },
       {
         name: "Magic Mug",
-        image: "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=900&q=80",
+        image: magicMug,
       },
       {
         name: "Corporate Logo Mug",
@@ -80,15 +90,15 @@ export const productCollections = {
       },
       {
         name: "Photo Mug",
-        image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=900&q=80",
+        image: photoMug,
       },
       {
         name: "Travel Mug",
-        image: "https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&w=900&q=80",
+        image: travelMug,
       },
       {
         name: "Matte Finish Mug",
-        image: "https://images.unsplash.com/photo-1512568400610-62da28bc8a13?auto=format&fit=crop&w=900&q=80",
+        image: matteMug,
       },
     ],
     uses: ["Office gifting", "Brand merchandise", "Campaign kits", "Festival hampers"],

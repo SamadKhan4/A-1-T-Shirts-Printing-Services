@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import logo from "../assets/fav.png";
 import { productDropdownItems } from "../data/productCollections";
+import { services } from "../data/services";
 import { navItems } from "../data/siteData";
 import { smoothScrollTo } from "../utils/smoothScroll";
 
@@ -84,6 +85,23 @@ export default function Header() {
                   ))}
                 </div>
               </div>
+            ) : item === "Services" ? (
+              <div key={item} className="group relative py-6">
+                <a href="/services" className="nav-link-item">
+                  {item}
+                </a>
+                <div className="invisible absolute left-1/2 top-full min-w-56 -translate-x-1/2 border border-black/8 bg-white p-3 opacity-0 shadow-[0_18px_45px_rgba(0,0,0,0.08)] transition group-hover:visible group-hover:opacity-100">
+                  {services.map((service) => (
+                    <a
+                      key={service.slug}
+                      href={`/services/${service.slug}`}
+                      className="block px-4 py-3 font-outfit text-xs uppercase tracking-[0.14em] text-black/60 no-underline transition hover:bg-[#faf8ff] hover:text-lavender"
+                    >
+                      {service.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
             ) : (
               <a
                 key={item}
@@ -138,6 +156,24 @@ export default function Header() {
                       onClick={() => setMenuOpen(false)}
                     >
                       {dropdownItem.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ) : item === "Services" ? (
+              <div key={item} className="flex flex-col gap-3">
+                <a href="/services" className="nav-link-item text-base" onClick={() => setMenuOpen(false)}>
+                  {item}
+                </a>
+                <div className="ml-4 flex flex-col gap-3 border-l border-black/10 pl-4">
+                  {services.map((service) => (
+                    <a
+                      key={service.slug}
+                      href={`/services/${service.slug}`}
+                      className="font-outfit text-xs uppercase tracking-[0.14em] text-black/55 no-underline transition hover:text-lavender"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {service.name}
                     </a>
                   ))}
                 </div>
