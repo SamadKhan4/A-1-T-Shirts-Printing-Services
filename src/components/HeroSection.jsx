@@ -5,21 +5,23 @@ import { smoothScrollTo } from "../utils/smoothScroll";
 export default function HeroSection() {
   return (
     <section id="top" className="min-h-screen flex flex-col justify-center pt-24 relative overflow-hidden">
+      
+      <div className="absolute inset-0 z-[1] bg-white/82" />
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 z-[2] opacity-[0.03]"
         style={{
           backgroundImage:
             "repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(0,0,0,0.18) 80px), repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(0,0,0,0.18) 80px)",
         }}
       />
       <div
-        className="absolute top-0 right-0 w-1/2 h-full opacity-5"
+        className="absolute top-0 right-0 z-[2] w-1/2 h-full opacity-10"
         style={{
           background: "radial-gradient(ellipse at 80% 30%, #8b5cf6 0%, transparent 65%)",
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full pt-20 pb-24">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full pt-20 pb-24">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <p className="font-outfit text-xs tracking-[0.22em] uppercase text-lavender mb-8 fade-up">
