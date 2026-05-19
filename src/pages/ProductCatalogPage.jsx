@@ -1,5 +1,6 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import { productDropdownItems } from "../data/productCollections";
 import { productCategories, products } from "../data/products";
 
 const buyingPoints = [
@@ -45,9 +46,29 @@ export default function ProductCatalogPage() {
               </p>
             </div>
 
+            <div className="mb-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+              {productDropdownItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="group overflow-hidden border border-black/10 bg-white text-center font-outfit text-xs font-semibold uppercase tracking-[0.14em] text-black/60 no-underline transition hover:-translate-y-1 hover:border-lavender hover:text-lavender hover:shadow-[0_14px_35px_rgba(139,92,246,0.12)]"
+                >
+                  <img
+                    src={item.image}
+                    alt={item.label}
+                    className="h-24 w-full object-cover transition duration-500 group-hover:scale-105"
+                  />
+                  <span className="block px-4 py-4">{item.label}</span>
+                </a>
+              ))}
+            </div>
+
             <div className="mb-10 flex flex-wrap justify-center gap-2">
               {productCategories.slice(1).map((category) => (
-                <span key={category} className="font-outfit text-xs text-black/45">
+                <span
+                  key={category}
+                  className="border border-black/8 bg-white px-3 py-1.5 font-outfit text-[10px] uppercase tracking-wider text-black/45"
+                >
                   {category}
                 </span>
               ))}
@@ -67,9 +88,24 @@ export default function ProductCatalogPage() {
                       className="h-64 w-full object-cover transition duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <h2 className="px-3 py-4 text-center font-outfit text-xs font-semibold leading-snug text-black">
-                    {product.name}
-                  </h2>
+                  <div className="p-4 text-center">
+                    <p className="mb-3 font-outfit text-[10px] uppercase tracking-[0.16em] text-lavender">
+                      {product.category}
+                    </p>
+                    <h2 className="font-outfit text-xs font-semibold leading-snug text-black">
+                      {product.name}
+                    </h2>
+                    <div className="mt-4 flex flex-wrap justify-center gap-2">
+                      {product.highlights.map((highlight) => (
+                        <span
+                          key={highlight}
+                          className="bg-[#faf8ff] px-2.5 py-1 font-outfit text-[10px] uppercase tracking-wider text-black/55"
+                        >
+                          {highlight}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </a>
               ))}
             </div>

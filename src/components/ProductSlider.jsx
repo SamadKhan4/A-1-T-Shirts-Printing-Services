@@ -3,16 +3,14 @@ import carbonni from "../assets/A1/Carbonni-1-1.jpg";
 import highO2 from "../assets/A1/HighO2.jpg";
 import ruffty from "../assets/A1/Ruffty-1.jpg";
 import rufftyCrewneck from "../assets/A1/Ruffty-Crewneck.jpg";
-import soloFormaliBanner from "../assets/A1/Solo-Formali-BAnner-1.jpg";
-import soloFormali from "../assets/A1/Solo-Formali.jpg";
+
 
 const slides = [
   { src: carbonni, title: "Carbonni Tee" },
   { src: highO2, title: "HighO2 Apparel" },
   { src: ruffty, title: "Ruffty Tee" },
   { src: rufftyCrewneck, title: "Ruffty Crewneck" },
-  { src: soloFormaliBanner, title: "Solo Formali Banner" },
-  { src: soloFormali, title: "Solo Formali" },
+
 ];
 
 export default function ProductSlider() {

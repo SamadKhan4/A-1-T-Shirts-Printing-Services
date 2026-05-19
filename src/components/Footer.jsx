@@ -6,7 +6,7 @@ export default function Footer() {
   const isHome = window.location.pathname === "/";
 
   const handleNav = (event, item) => {
-    if (item === "Products" || !isHome) return;
+    if (item === "Products" || item === "Services" || !isHome) return;
     smoothScrollTo(event, `#${item.toLowerCase()}`);
   };
 
@@ -30,7 +30,15 @@ export default function Footer() {
             {navItems.map((item) => (
               <a
                 key={item}
-                href={item === "Products" ? "/products" : isHome ? `#${item.toLowerCase()}` : `/#${item.toLowerCase()}`}
+                href={
+                  item === "Products"
+                    ? "/products"
+                    : item === "Services"
+                      ? "/services"
+                      : isHome
+                        ? `#${item.toLowerCase()}`
+                        : `/#${item.toLowerCase()}`
+                }
                 className="nav-link-item"
                 onClick={(event) => handleNav(event, item)}
               >

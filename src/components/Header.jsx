@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import logo from "../assets/fav.png";
+import { productDropdownItems } from "../data/productCollections";
 import { navItems } from "../data/siteData";
 import { smoothScrollTo } from "../utils/smoothScroll";
 
@@ -23,7 +24,7 @@ export default function Header() {
   const handleSectionNav = (event, item, onComplete) => {
     const target = `#${item.toLowerCase()}`;
 
-    if (item === "Products" || !isHome) {
+    if (item === "Products" || item === "Services" || !isHome) {
       onComplete?.();
       return;
     }
@@ -59,21 +60,40 @@ export default function Header() {
           }}
         >
           <img src={logo} alt="A-1 Prints" className="w-10 h-10 object-cover rounded-full" />
-          <span className="font-outfit font-semibold text-l tracking-widest uppercase text-black/90">
-            A-1 prints & <br />Enterprices
+          <span className="font-outfit font-semibold text-l tracking-widest  text-black/90">
+            A-1 Tshirts  &<br />Printing
           </span>
         </a>
 
         <nav className="hidden md:flex items-center gap-10">
           {navItems.map((item) => (
-            <a
-              key={item}
-              href={item === "Products" ? "/products" : isHome ? `#${item.toLowerCase()}` : `/#${item.toLowerCase()}`}
-              className="nav-link-item"
-              onClick={(event) => handleSectionNav(event, item)}
-            >
-              {item}
-            </a>
+            item === "Products" ? (
+              <div key={item} className="group relative py-6">
+                <a href="/products" className="nav-link-item">
+                  {item}
+                </a>
+                <div className="invisible absolute left-1/2 top-full min-w-52 -translate-x-1/2 border border-black/8 bg-white p-3 opacity-0 shadow-[0_18px_45px_rgba(0,0,0,0.08)] transition group-hover:visible group-hover:opacity-100">
+                  {productDropdownItems.map((dropdownItem) => (
+                    <a
+                      key={dropdownItem.href}
+                      href={dropdownItem.href}
+                      className="block px-4 py-3 font-outfit text-xs uppercase tracking-[0.14em] text-black/60 no-underline transition hover:bg-[#faf8ff] hover:text-lavender"
+                    >
+                      {dropdownItem.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <a
+                key={item}
+                href={item === "Services" ? "/services" : isHome ? `#${item.toLowerCase()}` : `/#${item.toLowerCase()}`}
+                className="nav-link-item"
+                onClick={(event) => handleSectionNav(event, item)}
+              >
+                {item}
+              </a>
+            )
           ))}
         </nav>
 
@@ -104,14 +124,34 @@ export default function Header() {
       {menuOpen && (
         <div className="md:hidden bg-white/98 border-t border-black/8 px-6 py-8 flex flex-col gap-6 shadow-sm">
           {navItems.map((item) => (
-            <a
-              key={item}
-              href={item === "Products" ? "/products" : isHome ? `#${item.toLowerCase()}` : `/#${item.toLowerCase()}`}
-              className="nav-link-item text-base"
-              onClick={(event) => handleSectionNav(event, item, () => setMenuOpen(false))}
-            >
-              {item}
-            </a>
+            item === "Products" ? (
+              <div key={item} className="flex flex-col gap-3">
+                <a href="/products" className="nav-link-item text-base" onClick={() => setMenuOpen(false)}>
+                  {item}
+                </a>
+                <div className="ml-4 flex flex-col gap-3 border-l border-black/10 pl-4">
+                  {productDropdownItems.slice(1).map((dropdownItem) => (
+                    <a
+                      key={dropdownItem.href}
+                      href={dropdownItem.href}
+                      className="font-outfit text-xs uppercase tracking-[0.14em] text-black/55 no-underline transition hover:text-lavender"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {dropdownItem.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <a
+                key={item}
+                href={item === "Services" ? "/services" : isHome ? `#${item.toLowerCase()}` : `/#${item.toLowerCase()}`}
+                className="nav-link-item text-base"
+                onClick={(event) => handleSectionNav(event, item, () => setMenuOpen(false))}
+              >
+                {item}
+              </a>
+            )
           ))}
           <a
             href={isHome ? "#quote" : "/#quote"}

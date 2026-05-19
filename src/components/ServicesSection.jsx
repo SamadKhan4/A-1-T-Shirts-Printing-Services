@@ -1,4 +1,4 @@
-import { services } from "../data/siteData";
+import { services } from "../data/services";
 
 export default function ServicesSection() {
   return (
@@ -20,9 +20,10 @@ export default function ServicesSection() {
 
           <div className="grid grid-cols-1 gap-0">
             {services.map((svc, index) => (
-              <div
-                key={svc.name}
-                className="process-step-inner flex justify-between items-center group cursor-default"
+              <a
+                key={svc.slug}
+                href={`/services/${svc.slug}`}
+                className="process-step-inner flex justify-between items-center group no-underline"
               >
                 <div className="flex items-center gap-6">
                   <span className="font-outfit text-xs text-black/30 w-6">
@@ -33,7 +34,7 @@ export default function ServicesSection() {
                   </span>
                 </div>
                 <span className="font-outfit text-xs text-black/45 italic">{svc.desc}</span>
-              </div>
+              </a>
             ))}
           </div>
         </div>
