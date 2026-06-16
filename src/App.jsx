@@ -1,37 +1,28 @@
-import HomePage from "./pages/HomePage";
-import ProductCatalogPage from "./pages/ProductCatalogPage";
-import ProductCollectionPage from "./pages/ProductCollectionPage";
-import ProductDetailPage from "./pages/ProductDetailPage";
-import ServiceDetailPage from "./pages/ServiceDetailPage";
-import ServicesPage from "./pages/ServicesPage";
-import { productCollections } from "./data/productCollections";
+import { Route, Routes } from "react-router-dom";
+import MainLayout from "./layouts/MainLayout.jsx";
+import About from "./pages/About.jsx";
+import BulkOrders from "./pages/BulkOrders.jsx";
+import Contact from "./pages/Contact.jsx";
+import Gallery from "./pages/Gallery.jsx";
+import Home from "./pages/Home.jsx";
+import ProductDetail from "./pages/ProductDetail.jsx";
+import Products from "./pages/Products.jsx";
+import Services from "./pages/Services.jsx";
 
 export default function App() {
-  const path = window.location.pathname;
-
-  if (path === "/products") {
-    return <ProductCatalogPage />;
-  }
-
-  if (path === "/services") {
-    return <ServicesPage />;
-  }
-
-  if (path.startsWith("/services/")) {
-    return <ServiceDetailPage slug={path.replace("/services/", "")} />;
-  }
-
-  if (path.startsWith("/products/")) {
-    const slug = path.replace("/products/", "");
-
-    if (productCollections[slug]) {
-      return <ProductCollectionPage slug={slug} />;
-    }
-  }
-
-  if (path.startsWith("/products/")) {
-    return <ProductDetailPage slug={path.replace("/products/", "")} />;
-  }
-
-  return <HomePage />;
+  return (
+    <Routes>
+      <Route element={<MainLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/products/:categorySlug" element={<Products />} />
+        <Route path="/product/:productSlug" element={<ProductDetail />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/bulk-orders" element={<BulkOrders />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/contact" element={<Contact />} />
+      </Route>
+    </Routes>
+  );
 }
