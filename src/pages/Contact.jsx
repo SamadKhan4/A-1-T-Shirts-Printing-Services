@@ -6,7 +6,7 @@ import { whatsappLink } from "../utils/whatsapp.js";
 
 const contactCards = [
   ["WhatsApp", "Get the fastest quote response", MessageCircle],
-  ["Call", "+91 99999 99999", Phone],
+  ["Call", "+91 96531 63441", Phone],
   ["Email", "hello@a1tshirtsprinting.com", Mail],
   ["Instagram", "@a1tshirtsprinting", Instagram],
   ["Address", "India", MapPin]

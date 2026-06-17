@@ -1,10 +1,10 @@
-import tshirts from "../assets/T-shirts/1.png";
-import hoodies from "../assets/A1/Ruffty-Crewneck.jpg";
-import caps from "../assets/A1/HighO2.jpg";
+import tshirts from "../assets/products/T-shirt1.jpg";
+import hoodies from "../assets/products/hoodies.jpg";
+import caps from "../assets/products/caps1.jpg";
 import keychains from "../assets/product/keychain.jpg";
 import mugs from "../assets/Other/magic_mug.png";
 import toteBags from "../assets/product/tote bag.jpg";
-import jerseys from "../assets/product/sublimation.png";
+import jerseys from "../assets/products/sports-1.jpg";
 import corporateMerch from "../assets/product/welcom-kit.png";
 
 export const categories = [

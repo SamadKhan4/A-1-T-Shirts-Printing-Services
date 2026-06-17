@@ -37,8 +37,8 @@ export default function Footer() {
             <a className="flex items-center gap-3 hover:text-white" href={whatsappLink()} target="_blank" rel="noreferrer">
               <MessageCircle size={17} /> WhatsApp inquiry
             </a>
-            <a className="flex items-center gap-3 hover:text-white" href="tel:+919999999999">
-              <Phone size={17} /> +91 99999 99999
+            <a className="flex items-center gap-3 hover:text-white" href="tel:+919653163441">
+              <Phone size={17} /> +91 96531 63441
             </a>
             <a className="flex items-center gap-3 hover:text-white" href="mailto:hello@a1tshirtsprinting.com">
               <Mail size={17} /> hello@a1tshirtsprinting.com
