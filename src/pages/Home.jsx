@@ -4,6 +4,7 @@ import BulkCTA from "../components/home/BulkCTA.jsx";
 import CategoryCards from "../components/home/CategoryCards.jsx";
 import FeaturedProducts from "../components/home/FeaturedProducts.jsx";
 import Hero from "../components/home/Hero.jsx";
+import MarqueeStrip from "../components/home/MarqueeStrip.jsx";
 import ServicesPreview from "../components/home/ServicesPreview.jsx";
 import Showcase from "../components/home/Showcase.jsx";
 import Testimonials from "../components/home/Testimonials.jsx";
@@ -21,6 +22,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <MarqueeStrip />
       <CategoryCards />
       <WhyChooseUs />
       <FeaturedProducts />
